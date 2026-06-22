@@ -1,5 +1,54 @@
 // basic root styles
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/roboto/roboto-v51-latin-regular.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 400
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/roboto/roboto-v51-latin-700.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 700
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/roboto/roboto-v51-latin-900.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 900
+}
+
+@font-face {
+  font-family: "Open-sans";
+  src: url(../assets/fonts/open-sans/open-sans-v44-latin-regular.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open-sans";
+  src: url(../assets/fonts/open-sans/open-sans-v44-latin-500.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Open-sans";
+  src: url(../assets/fonts/open-sans/open-sans-v44-latin-700.woff2) format('woff2');
+  font-display: swap;
+  font-weight: 700;
+}
+
+$def-screen-width: 1440;
+
+@function fluid-size($pixels){
+  @return calc(#{$pixels} / #{$def-screen-width} * 100vw);
+}
+
 :root {
+  --small-text-clamp: clamp(10px, #{fluid-size(18)}, 22px);
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -15,6 +64,8 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --open-sans: "Open-sans", sans-serif;
+  --roboto: "Roboto", sans-serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
