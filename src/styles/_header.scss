@@ -1,0 +1,57 @@
+.header {
+  position: sticky;
+  background-color: rgba(255, 255, 255, 0.315);
+  backdrop-filter: blur(10px);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  & > img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  & > svg {
+    width: 30px;
+    aspect-ratio: 1;
+    transition: transform 0.3s linear;
+  
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    & > path {
+      fill: black;
+    }
+  }
+  
+}
+
+.navbar {
+  & > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+    
+  .menu-item {
+    font-family: var(--open-sans);
+    font-weight: 400;
+    font-size: var(--small-text-clamp);
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: rgb(5, 131, 162);
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+  
